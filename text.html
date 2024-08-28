@@ -8,43 +8,44 @@
 </head>
 <body>
     <div class = "fundo">
-        <h1>Calculadora do AB</h1>
+        <h1>Calculadora</h1>
         <div class = "calculadora">
             <p id = "historico">1+1</p>
-            <p id = "resultado">2</p>
+            <p id = "resultado"></p>
             <table>
                 <tr>
-                    <td><button class = "botao-base botaoCE">CE</button></td>
-                    <td><button class = "botao-base botao">C</button></td>
-                    <td><button class = "botao-base botao">%</button></td>
-                    <td><button class = "botao-base botaoRoxo">÷</button></td>
+                    <td><button class = "botao-base botaoCE" onclick="erase('0')">CE</button></td>
+                    <td><button class = "botao-base botao" onclick="cleaning('0')">C</button></td>
+                    <td><button class = "botao-base botao" onclick="percentage()">%</button></td>
+                    <td><button class = "botao-base botaoRoxo" onclick="division('÷')">÷</button></td>
                 </tr>
                 <tr>
-                    <td><button class = "botao-base botao">7</button></td>
-                    <td><button class = "botao-base botao">8</button></td>
-                    <td><button class = "botao-base botao">9</button></td>
-                    <td><button class = "botao-base botaoRoxo">x</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('7')">7</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('8')">8</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('9')">9</button></td>
+                    <td><button class = "botao-base botaoRoxo" onclick="multiplication('×')">×</button></td>
                 </tr>
                 <tr>
-                    <td><button class = "botao-base botao">4</button></td>
-                    <td><button class = "botao-base botao">5</button></td>
-                    <td><button class = "botao-base botao">6</button></td>
-                    <td><button class = "botao-base botaoRoxo">-</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('4')">4</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('5')">5</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('6')">6</button></td>
+                    <td><button class = "botao-base botaoRoxo" onclick="subtraction('-')">-</button></td>
                 </tr>
                 <tr>
-                    <td><button class = "botao-base botao">1</button></td>
-                    <td><button class = "botao-base botao">2</button></td>
-                    <td><button class = "botao-base botao">3</button></td>
-                    <td><button class = "botao-base botaoRoxo">+</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('1')">1</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('2')">2</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('3')">3</button></td>
+                    <td><button class = "botao-base botaoRoxo" onclick="addition('+')">+</button></td>
                 </tr>
                 <tr>
-                    <td><button class = "botao-base botao">±</button></td>
-                    <td><button class = "botao-base botao">0</button></td>
-                    <td><button class = "botao-base botao">,</button></td>
+                    <td><button class = "botao-base botao" onclick="plusminus('±')">±</button></td>
+                    <td><button class = "botao-base botao" onclick="insert('0')">0</button></td>
+                    <td><button class = "botao-base botao" onclick="virgula(',')">,</button></td>
                     <td><button class = "botao-base botaoLilas">=</button></td>
                 </tr>
             </table>
         </div>
     </div>
+    <script src="back.js" defer></script>
 </body>
 </html>
