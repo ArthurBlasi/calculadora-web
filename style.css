@@ -54,6 +54,10 @@
     color: #ffff;
     text-align: right;
     padding: 5px;
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #historico{
     background-color: #2D2A37;

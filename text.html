@@ -10,8 +10,8 @@
     <div class = "fundo">
         <h1>Calculadora</h1>
         <div class = "calculadora">
-            <p id = "historico">1+1</p>
-            <p id = "resultado"></p>
+            <p id = "historico"></p>
+            <p type="text" id = "resultado"></p>
             <table>
                 <tr>
                     <td><button class = "botao-base botaoCE" onclick="erase('0')">CE</button></td>
@@ -38,10 +38,10 @@
                     <td><button class = "botao-base botaoRoxo" onclick="addition('+')">+</button></td>
                 </tr>
                 <tr>
-                    <td><button class = "botao-base botao" onclick="plusminus('±')">±</button></td>
+                    <td><button class = "botao-base botao" onclick="plusminus()">±</button></td>
                     <td><button class = "botao-base botao" onclick="insert('0')">0</button></td>
                     <td><button class = "botao-base botao" onclick="virgula(',')">,</button></td>
-                    <td><button class = "botao-base botaoLilas">=</button></td>
+                    <td><button class = "botao-base botaoLilas" onclick="equals()">=</button></td>
                 </tr>
             </table>
         </div>
