@@ -29,49 +29,53 @@ function percentage()
 
 function division(div)
 {
-    var numero = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = numero + div;
+    var numero = document.getElementById('historico').innerHTML + document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = "";
+    document.getElementById('historico').innerHTML = numero + div;
 }
 
 function multiplication(mult)
 {
-    var numero = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = numero + mult;
+    var numero = document.getElementById('historico').innerHTML + document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = "";
+    document.getElementById('historico').innerHTML = numero + mult;
 }
 
 function subtraction(sub)
 {
-    var numero = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = numero + sub;
+    var numero = document.getElementById('historico').innerHTML + document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = "";
+    document.getElementById('historico').innerHTML = numero + sub;
 }
 
 function addition(add)
 {
-    var numero = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = numero + add;
+    var numero = document.getElementById('historico').innerHTML + document.getElementById('resultado').innerHTML;
+    document.getElementById('resultado').innerHTML = "";
+    document.getElementById('historico').innerHTML = numero + add;
 }
 
 function plusminus()
 {
-    let expression = document.getElementById('resultado').innerHTML;
+    let numero = document.getElementById('historico').innerHTML + document.getElementById('resultado').innerHTML;
 
     let lastOperatorIndex = Math.max(
-        expression.lastIndexOf('+'),
-        expression.lastIndexOf('−'),
-        expression.lastIndexOf('×'),
-        expression.lastIndexOf('÷')
+        numero.lastIndexOf('+'),
+        numero.lastIndexOf('−'),
+        numero.lastIndexOf('×'),
+        numero.lastIndexOf('÷')
     );
 
-    let lastNumber = expression.substring(lastOperatorIndex + 1);
+    let ultimoNumero = numero.substring(lastOperatorIndex + 1);
 
-    if (lastNumber.startsWith('-')) {
-        lastNumber = lastNumber.substring(1);
+    if (ultimoNumero.startsWith('-')) {
+        ultimoNumero = ultimoNumero.substring(1);
     } else {
-        lastNumber = '-' + lastNumber;
+        ultimoNumero = '-' + ultimoNumero;
     }
 
-    expression = expression.substring(0, lastOperatorIndex + 1) + lastNumber;
-    document.getElementById('resultado').innerHTML = expression;
+    //numero = numero.substring(0, lastOperatorIndex + 1) + ultimoNumero;
+    document.getElementById('resultado').innerHTML = ultimoNumero;
 }
 
 function virgula(vir)
@@ -83,14 +87,14 @@ function virgula(vir)
 function equals()
 {
     try{
-        let expression = document.getElementById('resultado').innerHTML;
+        let expression = document.getElementById('historico').innerHTML + document.getElementById('resultado').innerHTML;
         expression = expression.replaceAll('÷', '/').replaceAll('×', '*');
         const result = eval(expression);
         expression = expression.replaceAll('/', '÷').replaceAll('*', '×');
         document.getElementById('historico').innerHTML = expression;
         document.getElementById('resultado').innerHTML = result;
     } catch (e) {
-        alert('NaN');
+        alert('Expressão inválida.');
     }
 }
 
