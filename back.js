@@ -85,9 +85,9 @@ function equals()
     //o método eval() serve para avaliar uma expressão de código JavaScript que está representada como uma string
     try{
         let expressao = document.getElementById('historico').innerHTML + document.getElementById('resultado').innerHTML;
-        expressao = expressao.replaceAll('÷', '/').replaceAll('×', '*');
+        expressao = expressao.replaceAll('÷', '/').replaceAll('×', '*').replaceAll(',', '.');
         const resultado = eval(expressao);
-        expressao = expressao.replaceAll('/', '÷').replaceAll('*', '×');
+        expressao = expressao.replaceAll('/', '÷').replaceAll('*', '×').replaceAll('.', ',');
         document.getElementById('historico').innerHTML = expressao + "=";
         document.getElementById('resultado').innerHTML = resultado;
     } catch (e) {
